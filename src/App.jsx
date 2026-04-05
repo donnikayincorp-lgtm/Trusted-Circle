@@ -87,8 +87,8 @@ function AuthScreen({ onAuth }) {
   return (
     <div style={{ minHeight: "100vh", background: "#f5f5ef", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <div style={{ background: "#1a1a14", padding: "12px 28px", borderRadius: 12, marginBottom: 32 }}>
-        <div style={{ fontFamily: "'Georgia', serif", fontSize: 24, fontWeight: 700, color: "#f0ede6" }}>Trusted Circle</div>
-        <div style={{ fontSize: 11, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 2 }}>Private referrals from people you trust</div>
+        <div style={{ fontFamily: "'Georgia', serif", fontSize: 24, fontWeight: 700, color: "#f0ede6" }}>LoopIn</div>
+        <div style={{ fontSize: 11, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 2 }}>Your trusted loop of recommendations</div>
       </div>
 
       {done ? (
@@ -385,14 +385,14 @@ export default function TrustedCircle() {
       <div style={{ background: "#1a1a14", padding: "20px 32px", display: "flex",
         alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
         <div>
-          <div style={{ fontFamily: "'Georgia', serif", fontSize: 24, fontWeight: 700, color: "#f0ede6" }}>Trusted Circle</div>
+          <div style={{ fontFamily: "'Georgia', serif", fontSize: 24, fontWeight: 700, color: "#f0ede6" }}>LoopIn</div>
           <div style={{ fontSize: 11, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 2 }}>
             {user.user_metadata?.full_name || user.email}
           </div>
         </div>
         <div style={{ display: "flex", gap: 8 }}>
           <button onClick={() => setShowFriends(true)} style={btn({ background: "#2a2a20", color: "#aaa" })}>
-            👥 Circle
+            👥 My Loop
           </button>
           <button onClick={() => setShowForm(!showForm)} style={btn({ background: showForm ? "#333" : "#e8c96a", color: showForm ? "#aaa" : "#1a1a00" })}>
             {showForm ? "Cancel" : "+ Add Referral"}
@@ -438,7 +438,7 @@ export default function TrustedCircle() {
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "28px 24px" }}>
         {/* Tabs */}
         <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
-          {[["mine","My Referrals"],["circle","My Circle's Referrals"]].map(([t,label]) => (
+          {[["mine","My Referrals"],["circle","My Loop's Referrals"]].map(([t,label]) => (
             <button key={t} onClick={() => setTab(t)} style={btn({
               background: tab === t ? "#1a1a14" : "#fff",
               color: tab === t ? "#e8c96a" : "#555",
@@ -475,7 +475,7 @@ export default function TrustedCircle() {
         {/* Grid */}
         {filtered.length === 0 ? (
           <div style={{ textAlign: "center", padding: "60px 20px", color: "#aaa", fontFamily: "'Georgia', serif", fontSize: 16 }}>
-            {tab === "circle" ? "No referrals from your circle yet — invite some friends!" : search ? `No results for "${search}"` : "No referrals yet. Add the first one!"}
+            {tab === "circle" ? "No referrals from your loop yet — invite some friends!" : search ? `No results for "${search}"` : "No referrals yet. Add the first one!"}
           </div>
         ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 18 }}>
