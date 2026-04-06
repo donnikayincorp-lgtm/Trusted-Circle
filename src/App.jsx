@@ -86,9 +86,9 @@ function AuthScreen({ onAuth }) {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f5f5ef", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-      <div style={{ background: "#1a1a14", padding: "12px 28px", borderRadius: 12, marginBottom: 32 }}>
-        <div style={{ fontFamily: "'Georgia', serif", fontSize: 24, fontWeight: 700, color: "#f0ede6" }}>LoopIn</div>
-        <div style={{ fontSize: 11, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 2 }}>Your trusted loop of recommendations</div>
+      <div style={{ marginBottom: 32, textAlign: "center" }}>
+        <img src="/loopin.logo.png" alt="LoopIn" style={{ height: 80, width: "auto" }} />
+        <div style={{ fontSize: 11, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 10 }}>Your trusted loop of recommendations</div>
       </div>
 
       {done ? (
@@ -384,9 +384,9 @@ export default function TrustedCircle() {
       {/* Header */}
       <div style={{ background: "#1a1a14", padding: "20px 32px", display: "flex",
         alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-        <div>
-          <div style={{ fontFamily: "'Georgia', serif", fontSize: 24, fontWeight: 700, color: "#f0ede6" }}>LoopIn</div>
-          <div style={{ fontSize: 11, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 2 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <img src="/loopin.logo.png" alt="LoopIn" style={{ height: 44, width: "auto" }} />
+          <div style={{ fontSize: 11, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>
             {user.user_metadata?.full_name || user.email}
           </div>
         </div>
